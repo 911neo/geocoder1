@@ -1,0 +1,55 @@
+<!doctype html>
+<html ng-app="app" ng-controller="appCtrl">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>McMakler frontend test</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.3/angular.min.js"></script>
+    <script src="http://maps.googleapis.com/maps/api/js?sensor=false&language=en"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+
+</head>
+<body>
+
+
+   <div class="from-container">
+
+
+
+
+    <h3>Mc Makler Geocoder</h3>
+
+    <!-- search/go to current location -->
+
+
+    <div class="text-right">
+        <div class="input-append text-right">
+        <input type="text" ng-model="search"placeholder="enter full address"/>
+
+        <button class="btn" type="button" ng-click="geoCode()" ng-disabled="search.length == 0" title="search" >
+              &nbsp;<i class="icon-search"></i>submit
+            </button>
+
+        </div>
+    </div>
+
+
+
+    <!-- current location -->
+    <div class="loc_display">
+      <h4>The coordinates for this address are</h4>
+        {{loc.lat | lat:0}}, {{loc.lon | lon:0}}
+    </div>
+
+    <div>
+
+    {{street}}{{housenumber}}{{city}}{{postalcode}}
+    </div>
+</div>
+
+ <script type="text/javascript" src="geoLoc.js"></script>
+</body>
+</html>
